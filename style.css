@@ -1,0 +1,149 @@
+.loader_bg{
+    position: fixed;
+    z-index: 999999;
+    background: #f1f2f4;
+    width: 100%;
+    height: 100%;
+}
+.loader{
+    border: 0 solid transparent;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    top: calc(50vh - 75px);
+    left: calc(50vw - 75px);
+}
+.loader::before, .loader::after{
+    content: '';
+    border: 1em solid #ff5733;
+    border-radius: 50%;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: loader 2s linear infinite;
+    opacity: 0;
+}
+.loader::before{
+    animation-delay: .5s;
+}
+@keyframes loader{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #f1f2f4;
+    font-family: sans-serif;
+}
+button{
+    outline: none;
+}
+#topBtn{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    font-size: 22px;
+    width: 50px;
+    height: 50px;
+    background: #e74c3c;
+    border: 0;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+}
+header{
+    background: #3498db;
+    height: 90px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: .6s;
+    z-index: 10000;
+}
+header.sticky{
+    background: #fff;
+}
+
+.container{
+    width: 1140px;
+    margin: auto;
+}
+.header-content{
+    display: flex;
+    justify-content: space-between;
+}
+.header-content .logo{
+    width: 8%;
+    transition: .6s;
+}
+.header-content ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: .6s;
+}
+.header-content ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: -5px;
+}
+.header-content ul li a{
+    display: block;
+    padding: 35px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+    transition: .6s ease-in-out;
+}
+
+.header-content ul li a:hover{
+    background: #2980b9;
+}
+header.sticky .logo,
+header.sticky ul li a{
+    color: #000;
+}
+header.sticky ul li a:hover{
+    color: #fff;
+}
+.banner img{
+    max-width: 100%;
+}
+.post-content{
+    text-align: center;
+}
+.post-content img{
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    margin-top: 10px;
+}
+.post-content h1{
+    font-size: 50px;
+    margin: 15px 0;
+}
+
+.post-content p{
+    width: 600px;
+    margin: auto;
+    line-height: 24px;
+    margin-bottom: 20px;
+}

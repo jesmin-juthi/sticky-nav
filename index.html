@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Development</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="loader_bg">
+        <div class="loader">
+
+        </div>
+    </div>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img class="logo" src="images/logo.png" alt="">
+               
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+              
+            </div>
+        </div>
+    </header>
+    <section class="banner">
+        <img src="images/bg.jpg" alt="">
+    </section>
+
+    <section class="posts">
+        <div class="container">
+            <div class="post-content">
+                <img src="images/p1.jpg" alt="">
+                <h1>Post Heading</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt dicta alias eligendi et tempore saepe vitae rerum aliquam magnam architecto ut dolorem excepturi quisquam tempora aut maiores ipsa optio facilis beatae, quas fugiat, libero dolorum perferendis omnis. Praesentium blanditiis repellendus provident. Qui, facere? Vero libero repellat minima doloribus non deleniti?</p>
+                <hr>
+            </div>
+        <div class="container">
+            <div class="post-content">
+                <img src="images/p2.jpg" alt="">
+                <h1>Post Heading</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt dicta alias eligendi et tempore saepe vitae rerum aliquam magnam architecto ut dolorem excepturi quisquam tempora aut maiores ipsa optio facilis beatae, quas fugiat, libero dolorum perferendis omnis. Praesentium blanditiis repellendus provident. Qui, facere? Vero libero repellat minima doloribus non deleniti?</p>
+                <hr>
+            </div>
+        </div>
+    </section>
+    <button id="topBtn"><i class="fa fa-arrow-up"></i></button>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        // loader
+        setTimeout(function(){
+            $('.loader_bg').fadeToggle();
+        }, 1500);
+        // scroll to top
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                if($(this).scrollTop() > 40){
+                    $('#topBtn').fadeIn();
+                } else{
+                    $('#topBtn').fadeOut();
+                }
+            });
+            $('#topBtn').click(function(){
+                $('html,body').animate({
+                    scrollTop : 0
+                }, 800);
+            });
+        });
+        // sticky header
+        window.addEventListener("scroll",function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky",window.scrollY > 0);
+        });
+    </script>
+</body>
+</html>
